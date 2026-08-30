@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>आपलं सत्य अहिल्यानगर | मराठी न्यूज पोर्टल</title>
+
+<meta name="description" content="आपलं सत्य अहिल्यानगर - अहिल्यानगर जिल्ह्यातील ताज्या, स्थानिक आणि विश्वासार्ह मराठी बातम्या.">
+<meta name="keywords" content="अहिल्यानगर बातम्या, अहमदनगर न्यूज, मराठी न्यूज, आपलं सत्य अहिल्यानगर">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Noto Sans Devanagari","Nirmala UI",Arial,sans-serif;
+    background:#f4f6f8;
+    color:#222;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:94%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* TOP BAR */
+.topbar{
+    background:#111;
+    color:#fff;
+    font-size:14px;
+    padding:7px 0;
+}
+
+.topbar-inner{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+/* HEADER */
+header{
+    background:#fff;
+    padding:18px 0;
+    border-bottom:1px solid #ddd;
+}
+
+.header-inner{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:20px;
+}
+
+.logo h1{
+    font-size:34px;
+    font-weight:900;
+}
+
+.logo h1 span{
+    color:#d71920;
+}
+
+.logo p{
+    color:#777;
+    font-size:14px;
+}
+
+.social{
+    display:flex;
+    gap:8px;
+}
+
+.social a{
+    background:#eee;
+    padding:7px 12px;
+    border-radius:5px;
+    font-size:13px;
+}
+
+/* NAVIGATION */
+nav{
+    background:#d71920;
+    color:white;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.nav-inner{
+    display:flex;
+    align-items:center;
+    overflow-x:auto;
+}
+
+.nav-inner a{
+    padding:13px 16px;
+    white-space:nowrap;
+    font-size:15px;
+    font-weight:700;
+}
+
+.nav-inner a:hover{
+    background:#a80f15;
+}
+
+/* BREAKING NEWS */
+.breaking{
+    background:#fff;
+    margin:15px 0;
+    border:1px solid #ddd;
+    display:flex;
+    align-items:center;
+    overflow:hidden;
+}
+
+.breaking-title{
+    background:#d71920;
+    color:white;
+    padding:9px 15px;
+    font-weight:bold;
+    white-space:nowrap;
+}
+
+.breaking-text{
+    padding:8px 15px;
+    white-space:nowrap;
+    animation:scroll 18s linear infinite;
+}
+
+@keyframes scroll{
+    from{transform:translateX(100%);}
+    to{transform:translateX(-100%);}
+}
+
+/* MAIN GRID */
+.main-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:20px;
+}
+
+/* HERO */
+.hero{
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 1px 5px rgba(0,0,0,.08);
+}
+
+.hero-img{
+    width:100%;
+    height:350px;
+    object-fit:cover;
+    background:#ddd;
+}
+
+.hero-content{
+    padding:18px;
+}
+
+.category{
+    display:inline-block;
+    background:#d71920;
+    color:#fff;
+    padding:4px 10px;
+    border-radius:4px;
+    font-size:12px;
+    margin-bottom:8px;
+}
+
+.hero h2{
+    font-size:27px;
+    line-height:1.35;
+    margin-bottom:8px;
+}
+
+.hero p{
+    color:#666;
+}
+
+/* SIDEBAR */
+.sidebar{
+    background:#fff;
+    padding:15px;
+    border-radius:8px;
+    box-shadow:0 1px 5px rgba(0,0,0,.08);
+}
+
+.section-title{
+    border-left:5px solid #d71920;
+    padding-left:10px;
+    margin-bottom:15px;
+    font-size:21px;
+    font-weight:800;
+}
+
+.side-news{
+    border-bottom:1px solid #ddd;
+    padding:12px 0;
+}
+
+.side-news:last-child{
+    border-bottom:0;
+}
+
+.side-news small{
+    color:#d71920;
+    font-weight:bold;
+}
+
+/* AD */
+.ad{
+    margin:20px 0;
+    background:#fff;
+    border:1px dashed #aaa;
+    min-height:90px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:#888;
+}
+
+/* NEWS SECTION */
+.news-section{
+    margin-top:25px;
+}
+
+.news-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.card{
+    background:#fff;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 1px 5px rgba(0,0,0,.08);
+    transition:.2s;
+}
+
+.card:hover{
+    transform:translateY(-3px);
+}
+
+.card img{
+    width:100%;
+    height:190px;
+    object-fit:cover;
+}
+
+.card-content{
+    padding:14px;
+}
+
+.card h3{
+    font-size:18px;
+    line-height:1.45;
+    margin:7px 0;
+}
+
+.card p{
+    font-size:14px;
+    color:#666;
+}
+
+.date{
+    color:#888;
+    font-size:12px;
+}
+
+/* DISTRICT */
+.district{
+    margin-top:25px;
+}
+
+.district-grid{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:10px;
+}
+
+.district a{
+    background:#fff;
+    padding:13px;
+    text-align:center;
+    border-radius:6px;
+    border:1px solid #ddd;
+    font-weight:bold;
+}
+
+.district a:hover{
+    background:#d71920;
+    color:#fff;
+}
+
+/* FOOTER */
+footer{
+    background:#151515;
+    color:#ddd;
+    margin-top:40px;
+    padding:35px 0 15px;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+    gap:30px;
+}
+
+footer h3{
+    color:#fff;
+    margin-bottom:12px;
+}
+
+footer p{
+    font-size:14px;
+    color:#bbb;
+}
+
+footer ul{
+    list-style:none;
+}
+
+footer li{
+    margin:7px 0;
+}
+
+.copyright{
+    border-top:1px solid #333;
+    margin-top:25px;
+    padding-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#999;
+}
+
+/* MOBILE */
+@media(max-width:800px){
+
+    .header-inner{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .logo h1{
+        font-size:27px;
+    }
+
+    .social{
+        justify-content:center;
+    }
+
+    .main-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-img{
+        height:240px;
+    }
+
+    .hero h2{
+        font-size:22px;
+    }
+
+    .news-grid{
+        grid-template-columns:1fr;
+    }
+
+    .district-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr;
+    }
+
+    .breaking-text{
+        font-size:13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+<div class="container topbar-inner">
+<span>रविवार, ३० ऑगस्ट २०२६</span>
+<span>आपलं सत्य अहिल्यानगर</span>
+</div>
+</div>
+
+<!-- HEADER -->
+<header>
+<div class="container header-inner">
+
+<div class="logo">
+<h1>आपलं सत्य <span>अहिल्यानगर</span></h1>
+<p>सत्य • निर्भीड • विश्वासार्ह</p>
+</div>
+
+<div class="social">
+<a href="#">Facebook</a>
+<a href="#">YouTube</a>
+<a href="#">WhatsApp</a>
+</div>
+
+</div>
+</header>
+
+<!-- NAVIGATION -->
+<nav>
+<div class="container nav-inner">
+<a href="#">मुख्यपृष्ठ</a>
+<a href="#">अहिल्यानगर</a>
+<a href="#">राजकारण</a>
+<a href="#">क्राईम</a>
+<a href="#">शिक्षण</a>
+<a href="#">शेती</a>
+<a href="#">व्यवसाय</a>
+<a href="#">क्रीडा</a>
+<a href="#">महाराष्ट्र</a>
+<a href="#">देश</a>
+<a href="#">फोटो गॅलरी</a>
+</div>
+</nav>
+
+<div class="container">
+
+<!-- BREAKING -->
+<div class="breaking">
+<div class="breaking-title">🔴 BREAKING NEWS</div>
+<div class="breaking-text">
+अहिल्यानगर जिल्ह्यातील ताज्या घडामोडी आणि महत्त्वाच्या बातम्यांसाठी 'आपलं सत्य अहिल्यानगर'सोबत जोडलेले रहा...
+</div>
+</div>
+
+<!-- MAIN -->
+<div class="main-grid">
+
+<!-- HERO -->
+<div class="hero">
+
+<img class="hero-img"
+src="https://images.unsplash.com/photo-1504711434969-e33886168f5c"
+alt="आपलं सत्य अहिल्यानगर">
+
+<div class="hero-content">
+
+<span class="category">अहिल्यानगर</span>
+
+<h2>
+अहिल्यानगर जिल्ह्यातील ताज्या घडामोडींचे विश्वसनीय वृत्तांकन
+</h2>
+
+<p>
+स्थानिक प्रश्न, सामाजिक घडामोडी, प्रशासन, राजकारण आणि नागरिकांच्या महत्त्वाच्या बातम्या.
+</p>
+
+</div>
+</div>
+
+<!-- SIDEBAR -->
+<aside class="sidebar">
+
+<h2 class="section-title">ताज्या बातम्या</h2>
+
+<div class="side-news">
+<small>अहिल्यानगर</small>
+<h3>जिल्ह्यातील महत्त्वाच्या घडामोडींवर प्रशासनाचे लक्ष</h3>
+</div>
+
+<div class="side-news">
+<small>राजकारण</small>
+<h3>स्थानिक राजकारणातील घडामोडींना वेग</h3>
+</div>
+
+<div class="side-news">
+<small>शिक्षण</small>
+<h3>विद्यार्थ्यांसाठी महत्त्वाची माहिती</h3>
+</div>
+
+<div class="side-news">
+<small>शेती</small>
+<h3>शेतकऱ्यांसाठी नवीन अपडेट</h3>
+</div>
+
+<div class="side-news">
+<small>क्राईम</small>
+<h3>पोलिस प्रशासनाची मोठी कारवाई</h3>
+</div>
+
+</aside>
+
+</div>
+
+<!-- AD -->
+<div class="ad">
+ADVERTISEMENT
+</div>
+
+<!-- LATEST NEWS -->
+<section class="news-section">
+
+<h2 class="section-title">ताज्या बातम्या</h2>
+
+<div class="news-grid">
+
+<article class="card">
+<img src="https://images.unsplash.com/photo-1495020689067-958852a7765e" alt="News">
+<div class="card-content">
+<span class="category">अहिल्यानगर</span>
+<h3>अहिल्यानगर जिल्ह्यात विविध विकासकामांना गती</h3>
+<p>जिल्ह्यातील महत्त्वाच्या घडामोडींची सविस्तर माहिती...</p>
+<span class="date">३० ऑगस्ट २०२६</span>
+</div>
+</article>
+
+<article class="card">
+<img src="https://images.unsplash.com/photo-1529107386315-e1a2ed48a620" alt="Politics">
+<div class="card-content">
+<span class="category">राजकारण</span>
+<h3>स्थानिक राजकीय घडामोडींना वेग</h3>
+<p>महत्त्वाच्या राजकीय घडामोडींचे ताजे अपडेट...</p>
+<span class="date">३० ऑगस्ट २०२६</span>
+</div>
+</article>
+
+<article class="card">
+<img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e" alt="Sports">
+<div class="card-content">
+<span class="category">क्रीडा</span>
+<h3>क्रीडा क्षेत्रातील महत्त्वाची बातमी</h3>
+<p>क्रीडा विश्वातील ताज्या घडामोडी...</p>
+<span class="date">३० ऑगस्ट २०२६</span>
+</div>
+</article>
+
+<article class="card">
+<img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef" alt="Agriculture">
+<div class="card-content">
+<span class="category">शेती</span>
+<h3>शेतकऱ्यांसाठी महत्त्वाची माहिती</h3>
+<p>कृषी क्षेत्रातील नवीन अपडेट आणि योजना...</p>
+<span class="date">३० ऑगस्ट २०२६</span>
+</div>
+</article>
+
+<article class="card">
+<img src="https://images.unsplash.com/photo-1584432810601-6c7f27d2362b" alt="Education">
+<div class="card-content">
+<span class="category">शिक्षण</span>
+<h3>विद्यार्थ्यांसाठी महत्त्वाची बातमी</h3>
+<p>शिक्षण क्षेत्रातील नवीन घडामोडी...</p>
+<span class="date">३० ऑगस्ट २०२६</span>
+</div>
+</article>
+
+<article class="card">
+<img src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f" alt="Crime">
+<div class="card-content">
+<span class="category">क्राईम</span>
+<h3>पोलिसांची मोठी कारवाई; तपास सुरू</h3>
+<p>घटनेचा पोलिसांकडून तपास सुरू आहे...</p>
+<span class="date">३० ऑगस्ट २०२६</span>
+</div>
+</article>
+
+</div>
+</section>
+
+<!-- DISTRICTS -->
+<section class="district">
+
+<h2 class="section-title">अहिल्यानगर जिल्हा</h2>
+
+<div class="district-grid">
+<a href="#">अहिल्यानगर</a>
+<a href="#">संगमनेर</a>
+<a href="#">शेवगाव</a>
+<a href="#">पाथर्डी</a>
+<a href="#">कर्जत</a>
+<a href="#">जामखेड</a>
+<a href="#">श्रीगोंदा</a>
+<a href="#">पारनेर</a>
+<a href="#">राहुरी</a>
+<a href="#">नेवासा</a>
+<a href="#">कोपरगाव</a>
+<a href="#">अकोले</a>
+</div>
+
+</section>
+
+<!-- AD -->
+<div class="ad">
+ADVERTISEMENT
+</div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+
+<div class="container footer-grid">
+
+<div>
+<h3>आपलं सत्य अहिल्यानगर</h3>
+<p>
+अहिल्यानगर जिल्ह्यातील ताज्या, स्थानिक आणि विश्वासार्ह बातम्या देणारे मराठी न्यूज पोर्टल.
+</p>
+</div>
+
+<div>
+<h3>महत्त्वाचे दुवे</h3>
+<ul>
+<li><a href="#">मुख्यपृष्ठ</a></li>
+<li><a href="#">आमच्याबद्दल</a></li>
+<li><a href="#">संपर्क</a></li>
+<li><a href="#">Privacy Policy</a></li>
+</ul>
+</div>
+
+<div>
+<h3>संपर्क</h3>
+<p>📧 Email: तुमचा ई-मेल येथे</p>
+<p>📱 WhatsApp: तुमचा नंबर येथे</p>
+</div>
+
+</div>
+
+<div class="container copyright">
+© 2026 आपलं सत्य अहिल्यानगर. सर्व हक्क राखीव.
+</div>
+
+</footer>
+
+</body>
+</html>
